@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				xr: {
+					blue: '#4F46E5',
+					purple: '#9b87f5',
+					cyan: '#22D3EE',
+					dark: '#0F172A',
+					light: '#E2E8F0'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,59 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '1',
+						boxShadow: '0 0 5px rgba(79, 70, 229, 0.6), 0 0 20px rgba(79, 70, 229, 0.4)'
+					},
+					'50%': {
+						opacity: '0.7',
+						boxShadow: '0 0 10px rgba(79, 70, 229, 0.8), 0 0 30px rgba(79, 70, 229, 0.6)'
+					}
+				},
+				float: {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'grid-flow': {
+					'0%, 100%': {
+						transform: 'translateX(0) translateY(0)'
+					},
+					'50%': {
+						transform: 'translateX(5px) translateY(-5px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'pulse-glow': 'pulse-glow 2s infinite',
+				float: 'float 6s ease-in-out infinite',
+				'grid-flow': 'grid-flow 8s ease-in-out infinite'
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+				'space': ['"Space Grotesk"', 'sans-serif']
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'grid-pattern': 'linear-gradient(to right, rgba(79, 70, 229, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(79, 70, 229, 0.1) 1px, transparent 1px)',
 			}
 		}
 	},
