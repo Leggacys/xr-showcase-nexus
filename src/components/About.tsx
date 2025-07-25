@@ -43,7 +43,7 @@ const About = () => {
                 {/* Image */}
                 <div className="absolute inset-[3px] rounded-2xl overflow-hidden bg-xr-dark">
                   <img 
-                    src="https://images.unsplash.com/photo-1581091877018-dac6a371d50f?q=80&w=800&fit=crop" 
+                    src="public/ProfilePicture.jpeg" 
                     alt="XR Developer" 
                     className="w-full h-full object-cover"
                   />
@@ -52,7 +52,7 @@ const About = () => {
                 {/* Experience badge */}
                 <div className="absolute -right-5 bottom-10 bg-gradient-to-r from-xr-blue to-xr-purple p-[1px] rounded-xl shadow-lg">
                   <div className="bg-xr-dark rounded-xl px-4 py-2">
-                    <p className="text-sm font-medium">5+ Years Experience</p>
+                    <p className="text-sm font-medium">4+ Years Experience</p>
                   </div>
                 </div>
               </div>
@@ -67,27 +67,20 @@ const About = () => {
             <h2 className="section-title">About Me</h2>
             
             <p className="text-lg mb-6 text-gray-200">
-              I'm a passionate XR Developer specializing in creating immersive digital experiences that bridge the gap between the physical and virtual worlds.
+             Hey! I’m Daniel, a Software Engineer with a passion for building things that are interactive, efficient, and fun to use. My background started in XR development, but over time I’ve worked on everything from AR/VR apps to mobile games and automation pipelines.
             </p>
             
             <p className="text-gray-300 mb-6">
-              With over 5 years of experience in XR development, I've had the privilege of working on cutting-edge projects across various industries including healthcare, education, and entertainment. My expertise spans virtual reality, augmented reality, and mixed reality applications, with a strong foundation in both technical development and user experience design.
+              Outside of work, I love tinkering with game ideas, experimenting with 3D environments in Blender, and just diving deep into how things work under the hood. Whether it's shipping a new feature or solving a tricky bug, I’m all about clean code, smart systems, and building cool stuff with good people.
             </p>
             
-            <p className="text-gray-300 mb-8">
-              I'm driven by the potential of immersive technologies to transform how we learn, work, and connect. Whether it's creating virtual training environments that enhance skill development or developing augmented reality applications that blend digital information with our physical surroundings, I'm committed to pushing the boundaries of what's possible in the XR space.
-            </p>
+
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Experience Items */}
               <div className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-xr-blue/30 transition-all hover-glow">
                 <h3 className="font-bold text-xl mb-1 font-space">Education</h3>
-                <p className="text-gray-300">MSc in Computer Science<br />Specialization in Interactive Media</p>
-              </div>
-              
-              <div className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-xr-purple/30 transition-all hover-glow">
-                <h3 className="font-bold text-xl mb-1 font-space">Certifications</h3>
-                <p className="text-gray-300">Unity Certified Developer<br />Google ARCore Certification</p>
+                <p className="text-gray-300">BSc in Computer Science<br />Universitatea Alexandru Ioan Cuza Iasi</p>
               </div>
             </div>
           </div>

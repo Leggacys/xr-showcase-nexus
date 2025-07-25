@@ -10,63 +10,18 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <a href="#" className="text-2xl font-bold font-space text-gradient">
-              XR.Portfolio
+              Hello World!
             </a>
             <p className="text-gray-400 mt-2 max-w-md">
               Creating immersive digital experiences at the intersection of art, technology and innovation.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-medium mb-4">Navigation</h3>
-              <ul className="space-y-3">
-                <li><FooterLink href="#projects">Projects</FooterLink></li>
-                <li><FooterLink href="#skills">Skills</FooterLink></li>
-                <li><FooterLink href="#about">About</FooterLink></li>
-                <li><FooterLink href="#contact">Contact</FooterLink></li>
-              </ul>
-            </div>
-            
-            {/* Services */}
-            <div>
-              <h3 className="text-white font-medium mb-4">Services</h3>
-              <ul className="space-y-3">
-                <li><FooterLink href="#">VR Development</FooterLink></li>
-                <li><FooterLink href="#">AR Applications</FooterLink></li>
-                <li><FooterLink href="#">3D Modeling</FooterLink></li>
-                <li><FooterLink href="#">XR Consulting</FooterLink></li>
-              </ul>
-            </div>
-            
-            {/* Legal */}
-            <div>
-              <h3 className="text-white font-medium mb-4">Legal</h3>
-              <ul className="space-y-3">
-                <li><FooterLink href="#">Privacy Policy</FooterLink></li>
-                <li><FooterLink href="#">Terms of Service</FooterLink></li>
-                <li><FooterLink href="#">Cookies Policy</FooterLink></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-            © {currentYear} XR.Portfolio. All rights reserved.
-          </p>
-          
-          <div className="flex space-x-6">
-            <SocialLink href="#" icon="github" />
-            <SocialLink href="#" icon="twitter" />
-            <SocialLink href="#" icon="linkedin" />
-            <SocialLink href="#" icon="instagram" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">                Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
           </div>
         </div>
       </div>
       
-      {/* Background elements */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-xr-blue/30 to-transparent"></div>
     </footer>
   );

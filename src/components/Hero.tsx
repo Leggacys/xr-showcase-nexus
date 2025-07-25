@@ -27,7 +27,7 @@ const Hero = () => {
             "inline-block py-1 px-3 rounded-full bg-xr-blue/10 text-xr-blue border border-xr-blue/20 mb-4 transform transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            XR Developer & Designer
+            Software Developer
           </span>
           
           <h1 className={cn(
@@ -42,7 +42,7 @@ const Hero = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
             Specialized in building cutting-edge XR applications, 
-            immersive experiences, and interactive 3D environments 
+            mobile applications, and interactive 3D environments 
             that push the boundaries of reality.
           </p>
           
@@ -71,7 +71,7 @@ const Hero = () => {
                 <div className="absolute h-full w-full rounded-full border border-white/10"></div>
                 <div className="absolute h-3/4 w-3/4 rounded-full border border-white/10 animate-pulse" style={{animationDuration: "4s"}}></div>
                 <div className="absolute h-1/2 w-1/2 rounded-full border border-white/10 animate-pulse" style={{animationDuration: "5s"}}></div>
-                <div className="text-5xl font-bold text-gradient">XR</div>
+                <div className="text-5xl font-bold text-gradient">Hello World!</div>
               </div>
             </div>
           </div>

@@ -26,7 +26,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <a href="#" className="text-2xl font-bold font-space text-gradient">
-          XR.Portfolio
+          Leggacys
         </a>
 
         {/* Mobile Menu Button */}

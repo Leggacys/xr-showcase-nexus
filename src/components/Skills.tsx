@@ -1,52 +1,73 @@
-
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
+
 interface Skill {
   name: string;
-  icon: string;
-  category: 'xr' | 'development' | 'design';
-  proficiency: number; // 1-100
+  icon: React.ReactNode;
+  category: 'xr' | 'development' | 'design' | 'cicd';
+  proficiency: number; 
 }
+
 
 const skills: Skill[] = [
   // XR Technologies
-  { name: "Unity", icon: "🎮", category: "xr", proficiency: 95 },
-  { name: "Unreal Engine", icon: "🎲", category: "xr", proficiency: 85 },
-  { name: "Oculus SDK", icon: "👓", category: "xr", proficiency: 90 },
-  { name: "ARKit", icon: "📱", category: "xr", proficiency: 80 },
-  { name: "ARCore", icon: "🤖", category: "xr", proficiency: 75 },
-  { name: "WebXR", icon: "🌐", category: "xr", proficiency: 85 },
-  { name: "Microsoft Mesh", icon: "📊", category: "xr", proficiency: 70 },
-  
+  { name: "Unity", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" className="w-6 h-6 inline" />, category: "xr", proficiency: 95 },
+  { name: "Oculus SDK", icon: "👓", category: "xr", proficiency: 90 }, // No official CDN logo, using emoji
+  { name: "ARKit", icon: <img src="https://developer.apple.com/assets/elements/icons/arkit/arkit-96x96_2x.png" alt="ARKit" className="w-6 h-6 inline" />, category: "xr", proficiency: 80 },
+  { name: "ARCore", icon: "📱", category: "xr", proficiency: 75 }, // No official CDN logo, using emoji
+
   // Development
-  { name: "C#", icon: "🧩", category: "development", proficiency: 95 },
-  { name: "JavaScript", icon: "🟨", category: "development", proficiency: 90 },
-  { name: "Three.js", icon: "🌟", category: "development", proficiency: 85 },
-  { name: "React", icon: "⚛️", category: "development", proficiency: 80 },
-  { name: "WebGL", icon: "🖥️", category: "development", proficiency: 75 },
-  { name: "Python", icon: "🐍", category: "development", proficiency: 65 },
-  { name: "Swift", icon: "🎯", category: "development", proficiency: 60 },
-  
+  { name: "C#", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" className="w-6 h-6 inline" />, category: "development", proficiency: 90 },
+  { name: "Dart", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" className="w-6 h-6 inline" />, category: "development", proficiency: 50 },
+  { name: "Flutter", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" className="w-6 h-6 inline" />, category: "development", proficiency: 60 },
+  { name: "React", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-6 h-6 inline" />, category: "development", proficiency: 40 },
+  { name: "Python", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-6 h-6 inline" />, category: "development", proficiency: 65 },
+  {
+    name: "JavaScript",
+    icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-6 h-6 inline" />,
+    category: "development",
+    proficiency: 55
+  },
+  {
+    name: "C++",
+    icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" className="w-6 h-6 inline" />,
+    category: "development",
+    proficiency: 60
+  },
+
+  // CI/CD & DevOps
+  { name: "GitHub Actions", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" className="w-6 h-6 inline" />, category: "cicd", proficiency: 70 },
+  { name: "Docker", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="w-6 h-6 inline" />, category: "cicd", proficiency: 60 },
+  { name: "Git", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="w-6 h-6 inline" />, category: "cicd", proficiency: 80 },
+  { name: "Jenkins", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" className="w-6 h-6 inline" />, category: "cicd", proficiency: 50 },
+  { name: "Linux", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" className="w-6 h-6 inline" />, category: "cicd", proficiency: 75 },
+
   // Design
-  { name: "3D Modeling", icon: "🧊", category: "design", proficiency: 80 },
-  { name: "UX Design", icon: "🎨", category: "design", proficiency: 85 },
-  { name: "3D Animation", icon: "🏃", category: "design", proficiency: 75 },
-  { name: "Blender", icon: "🔄", category: "design", proficiency: 80 },
-  { name: "Adobe Suite", icon: "✏️", category: "design", proficiency: 70 },
-  { name: "Sound Design", icon: "🔊", category: "design", proficiency: 65 },
+  { name: "Blender", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender" className="w-6 h-6 inline" />, category: "design", proficiency: 80 },
+  { 
+    name: "Adobe Suite", 
+    icon: "🎨", 
+    category: "design", 
+    proficiency: 70 
+  },
+  { name: "Photoshop", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" className="w-6 h-6 inline" />, category: "design", proficiency: 80 },
+  { name: "Premiere Pro", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro" className="w-6 h-6 inline" />, category: "design", proficiency: 70 },
+  { name: "After Effects", icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" alt="After Effects" className="w-6 h-6 inline" />, category: "design", proficiency: 65 },
 ];
 
 const categoryColors: Record<string, string> = {
   xr: "from-xr-blue to-xr-purple",
   development: "from-blue-500 to-cyan-500",
   design: "from-purple-500 to-pink-500",
+  cicd: "from-yellow-500 to-orange-500",
 };
 
 const categoryTitles: Record<string, string> = {
   xr: "XR Technologies",
   development: "Development",
   design: "Design & 3D",
+  cicd: "CI/CD & DevOps",
 };
 
 const Skills = () => {
@@ -71,7 +92,7 @@ const Skills = () => {
     ? skills.filter(skill => skill.category === filter) 
     : skills;
   
-  const categories = ["xr", "development", "design"];
+  const categories = ["xr", "development", "design", "cicd"];
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-b from-xr-dark to-xr-dark/90 relative">
@@ -84,10 +105,6 @@ const Skills = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         )}>
           <h2 className="section-title text-center">Technical Skills</h2>
-          <p className="section-subtitle text-center max-w-3xl mx-auto">
-            Specialized in creating immersive experiences with expertise in XR technologies, 
-            development frameworks, and 3D design tools.
-          </p>
           
           {/* Category filters */}
           <div className="flex flex-wrap justify-center gap-3 mt-8 mb-12">
